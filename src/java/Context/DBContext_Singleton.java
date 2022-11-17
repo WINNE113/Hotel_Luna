@@ -10,12 +10,12 @@ import java.sql.DriverManager;
 public class DBContext_Singleton {
 
     static Connection conn = null;
-    private static final String serverName = "LAPTOP-0IB3OE91\\SQLEXPRESS";
-    private static final String dbName = "LUNA_HOTEL";
+    private static final String serverName ="DESKTOP-84SCD87\\ANHMINH"; //"LAPTOP-0IB3OE91\\SQLEXPRESS"; 
+    private static final String dbName = "TEST123456";//"LUNA_HOTEL";
     private static final String portNumber = "1433";
     private static final String instance = "";
     private static final String userID = "sa";
-    private static final String password = "huuthang";
+    private static final String password = "123456";//"huuthang";
     
     private DBContext_Singleton() {
     }
