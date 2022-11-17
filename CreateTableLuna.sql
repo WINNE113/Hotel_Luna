@@ -25,6 +25,14 @@ USE LUNA_HOTEL;
 	DROP TABLE IF EXISTS HotelService;
 	
 
+	CREATE TABLE Account(
+		id int PRIMARY KEY IDENTITY(1,1),
+		username varchar(50),
+		password varchar(50),
+		isAdmin BIT,
+	)
+
+
 	CREATE TABLE RoomType(
 		RoomTypeName nvarchar(50) PRIMARY KEY,
 		RoomPrice DECIMAL(7,2) CHECK (RoomPrice>0),
