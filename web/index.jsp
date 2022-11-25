@@ -4,6 +4,7 @@
     Author     : ASUS-PRO
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -119,25 +120,26 @@
                 <div class="container-fluid">
                     <div class="hp-room-items">
                         <div class="row">
+                        <c:forEach items="${listRoom}" var="item">
                             <div class="col-lg-3 col-md-6">
                                 <div class="hp-room-item set-bg">
-                                    <img src="assets/img/home/ninh-van-bay-vietnam-rock_villa_bedroom25574.jpg" width="100%" height="100%" alt="">
+                                    <img src="assets/img/home/ninh-van-bay-vietnam-rock_villa_bedroom25574.jpg" width="100%" height="70%" alt="">
                                     <div class="hr-text">
-                                        <h3>Double Room</h3>
-                                        <h2>1000đ<span>/Pernight</span></h2>
+                                        <h3>${item.roomTypeName}</h3>
+                                        <h2>${item.roomPrice}<span>/Pernight</span></h2>
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td class="r-o">Size:</td>
-                                                    <td>30 ft</td>
+                                                    <td class="r-o">City</td>
+                                                    <td>${item.cityName}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="r-o">Capacity:</td>
-                                                    <td>Max persion 5</td>
+                                                    <td class="r-o">Address</td>
+                                                    <td>${item.hotelAddress}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="r-o">Bed:</td>
-                                                    <td>King Beds</td>
+                                                    <td class="r-o">Room Rate</td>
+                                                    <td>${item.roomRateDesc}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="r-o">Services:</td>
@@ -149,240 +151,155 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="hp-room-item set-bg">
-                                    <img src="assets/img/home/ninh-van-bay-vietnam-water-pool-villa-bathroom.jpg" width="100%" height="100%" alt="">
-                                    <div class="hr-text">
-                                        <h3>Premium King Room</h3>
-                                        <h2>1200đ<span>/Pernight</span></h2>
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="r-o">Size:</td>
-                                                    <td>30 ft</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Capacity:</td>
-                                                    <td>Max persion 5</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Bed:</td>
-                                                    <td>King Beds</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Services:</td>
-                                                    <td>Wifi, Television, Bathroom,...</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <a href="#" class="primary-btn">More Details</a>
-                                    </div>
-                                </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Services-->
+
+        <section class="services-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <span>What We Do</span>
+                            <h2>Discover Our Services</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="service-item">
+                            <i class="flaticon-036-parking"></i>
+                            <h4>Travel Plan</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="service-item">
+                            <i class="flaticon-033-dinner"></i>
+                            <h4>Catering Service</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="service-item">
+                            <i class="flaticon-026-bed"></i>
+                            <h4>Babysitting</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="service-item">
+                            <i class="flaticon-024-towel"></i>
+                            <h4>Laundry</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="service-item">
+                            <i class="flaticon-044-clock-1"></i>
+                            <h4>Hire Driver</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="service-item">
+                            <i class="flaticon-012-cocktail"></i>
+                            <h4>Bar & Drink</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section Begin -->
+        <section class="blog-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <span>Hotel News</span>
+                            <h2>Our Blog & Event</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="blog-item set-bg">
+                            <img src="assets/img/home/ninh-van-bay-vietnam-black-shanked-douc-langur.jpg" width="100%" height="100%" alt="">
+                            <div class="bi-text">
+                                <span class="b-tag">Travel Trip</span>
+                                <h4><a href="#">Son Tra Island</a></h4>
+                                <div class="b-time"><i class="icon_clock_alt"></i> 15th May, 2022</div>
                             </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="hp-room-item set-bg">
-                                    <img src="assets/img/home/water_pool_villa-aerial_-8381-large-1.jpg" width="100%" height="100%" alt="">
-                                    <div class="hr-text">
-                                        <h3>Deluxe Room</h3>
-                                        <h2>1600đ<span>/Pernight</span></h2>
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="r-o">Size:</td>
-                                                    <td>30 ft</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Capacity:</td>
-                                                    <td>Max persion 5</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Bed:</td>
-                                                    <td>King Beds</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Services:</td>
-                                                    <td>Wifi, Television, Bathroom,...</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <a href="#" class="primary-btn">More Details</a>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-item set-bg">
+                            <img src="assets/img/home/ninh-van-bay-vietnam-rock_villa_bedroom25574.jpg" width="100%" height="100%" alt="">
+                            <div class="bi-text">
+                                <span class="b-tag">Camping</span>
+                                <h4><a href="#">My Khe beach</a></h4>
+                                <div class="b-time"><i class="icon_clock_alt"></i> 15th May, 2022</div>
                             </div>
-                            <div class="col-lg-3 col-md-6">
-                                <div class="hp-room-item set-bg">
-                                    <img src="assets/img/home/ninh-van-bay-vietnam-hiking_trail-5567.jpg" width="100%" height="100%" alt="">
-                                    <div class="hr-text">
-                                        <h3>Family Room</h3>
-                                        <h2>3000đ<span>/Pernight</span></h2>
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="r-o">Size:</td>
-                                                    <td>30 ft</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Capacity:</td>
-                                                    <td>Max persion 15</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Bed:</td>
-                                                    <td>King Beds</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="r-o">Services:</td>
-                                                    <td>Wifi, Television, Bathroom,...</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <a href="#" class="primary-btn">More Details</a>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-item set-bg">
+                            <img src="assets/img/home/ninh-van-bay-vietnam-water-pool-villa-bathroom.jpg" width="100%" height="100%" alt="">
+                            <div class="bi-text">
+                                <span class="b-tag">Event</span>
+                                <h4><a href="#">Than Tai Mountain</a></h4>
+                                <div class="b-time"><i class="icon_clock_alt"></i> 21th May, 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="blog-item small-size set-bg">
+                            <img src="assets/img/home/ninh_van_bay_vietnam_rock_pool_villa_aerial2.jpg" width="100%" height="100%" alt="">
+                            <div class="bi-text">
+                                <span class="b-tag">Event</span>
+                                <h4><a href="#">Hoi An Ancient Town Trip</a></h4>
+                                <div class="b-time"><i class="icon_clock_alt"></i> 08th May, 2022</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-item small-size set-bg">
+                            <img src="assets/img/home/ninh_van_bay_vietnam_rock_pool_villa_aerial2.jpg" width="100%" height="100%" alt="">
+                            <div class="bi-text">
+                                <span class="b-tag">Travel</span>
+                                <h4><a href="#">Traveling To BâN Hills</a></h4>
+                                <div class="b-time"><i class="icon_clock_alt"></i> 12th May, 2022</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!--Services-->
-
-            <section class="services-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title">
-                                <span>What We Do</span>
-                                <h2>Discover Our Services</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="service-item">
-                                <i class="flaticon-036-parking"></i>
-                                <h4>Travel Plan</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="service-item">
-                                <i class="flaticon-033-dinner"></i>
-                                <h4>Catering Service</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="service-item">
-                                <i class="flaticon-026-bed"></i>
-                                <h4>Babysitting</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="service-item">
-                                <i class="flaticon-024-towel"></i>
-                                <h4>Laundry</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="service-item">
-                                <i class="flaticon-044-clock-1"></i>
-                                <h4>Hire Driver</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="service-item">
-                                <i class="flaticon-012-cocktail"></i>
-                                <h4>Bar & Drink</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Blog Section Begin -->
-            <section class="blog-section spad">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title">
-                                <span>Hotel News</span>
-                                <h2>Our Blog & Event</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="blog-item set-bg">
-                                <img src="assets/img/home/ninh-van-bay-vietnam-black-shanked-douc-langur.jpg" width="100%" height="100%" alt="">
-                                <div class="bi-text">
-                                    <span class="b-tag">Travel Trip</span>
-                                    <h4><a href="#">Son Tra Island</a></h4>
-                                    <div class="b-time"><i class="icon_clock_alt"></i> 15th May, 2022</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-item set-bg">
-                                <img src="assets/img/home/ninh-van-bay-vietnam-rock_villa_bedroom25574.jpg" width="100%" height="100%" alt="">
-                                <div class="bi-text">
-                                    <span class="b-tag">Camping</span>
-                                    <h4><a href="#">My Khe beach</a></h4>
-                                    <div class="b-time"><i class="icon_clock_alt"></i> 15th May, 2022</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-item set-bg">
-                                <img src="assets/img/home/ninh-van-bay-vietnam-water-pool-villa-bathroom.jpg" width="100%" height="100%" alt="">
-                                <div class="bi-text">
-                                    <span class="b-tag">Event</span>
-                                    <h4><a href="#">Than Tai Mountain</a></h4>
-                                    <div class="b-time"><i class="icon_clock_alt"></i> 21th May, 2022</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="blog-item small-size set-bg">
-                                <img src="assets/img/home/ninh_van_bay_vietnam_rock_pool_villa_aerial2.jpg" width="100%" height="100%" alt="">
-                                <div class="bi-text">
-                                    <span class="b-tag">Event</span>
-                                    <h4><a href="#">Hoi An Ancient Town Trip</a></h4>
-                                    <div class="b-time"><i class="icon_clock_alt"></i> 08th May, 2022</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="blog-item small-size set-bg">
-                                <img src="assets/img/home/ninh_van_bay_vietnam_rock_pool_villa_aerial2.jpg" width="100%" height="100%" alt="">
-                                <div class="bi-text">
-                                    <span class="b-tag">Travel</span>
-                                    <h4><a href="#">Traveling To BâN Hills</a></h4>
-                                    <div class="b-time"><i class="icon_clock_alt"></i> 12th May, 2022</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Blog Section End -->
+            </div>
+        </section>
+        <!-- Blog Section End -->
 
 
-            <!-- Footer Section Begin -->
+        <!-- Footer Section Begin -->
         <jsp:include page="Footer.jsp"></jsp:include>
         <!-- Footer Section End -->
 
-        <script src="js/main.js"></script>
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>      
     </body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
+
 </html>

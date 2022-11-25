@@ -124,7 +124,7 @@ body {
   margin-top: 150px;
   margin-left: 50%;
 }
-input[type="file" i] {
+input[type="file"] {
   top: 120px;
   appearance: none;
   background-color: initial;
