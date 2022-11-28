@@ -36,8 +36,8 @@
 
                 <div class="form-group form-check">
                     <a href="ForgetPassword.jsp">Forgot PassWord</a>
-                    <a href="https://accounts.google.com/o/oauth2/auth?scope=profile&redirect_uri=http://localhost:8080/LoginGoogle/LoginGoogleHandler&response_type=code
-                       &client_id=510384508793-m5ak8if8fpbp1nm4tom3o6q44rqrqngi.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
+                    <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8084/Hotel_Luna/login-google&response_type=code
+                    &client_id=1077806050866-37ct9p649e440i0e154d5tue7b60urop.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
                 </div>
                 <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
 
