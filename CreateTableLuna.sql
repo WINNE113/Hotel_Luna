@@ -52,6 +52,7 @@ USE LUNA_HOTEL;
 		RoomRateID smallint PRIMARY KEY,
 		StarRating float CHECK(StarRating >= 0 AND StarRating <= 5),
 		RoomComment text,
+		GuestID int FOREIGN KEY REFERENCES Guest(GuestID),
 	)
 	
 
