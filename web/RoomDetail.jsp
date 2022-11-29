@@ -1,11 +1,7 @@
-<%-- 
-    Document   : RoomDetail
-    Created on : Nov 24, 2022, 9:09:53 AM
-    Author     : ndatw
---%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,13 +18,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    
-    <link rel="stylesheet" href="assets/css/main_2.css" />
+    <link rel="stylesheet" href="assets/css/main_3.css" />
     <link rel="stylesheet" hre="assets/css/responsive-style.css" />
     <title>Hotel</title>
   </head>
   <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     <!-- 1.header-section Begin -->
+
     <header class="header-section">
       <div class="top-nav">
         <div class="container">
@@ -127,7 +123,6 @@
       </div>
       <div class="roomService"><h3>Service</h3></div>
       <div class="RoomInfoDetailContainer">
-        
         <table>
           <tr>
             <th>Amenities</th>
@@ -161,7 +156,7 @@
             <td></td>
             <td></td>
           </tr>
-          
+
           <tr class="DescriptionContent">
             <th>More Decription</th>
             <td colspan="5" rowspan="2">
@@ -179,20 +174,31 @@
           </tr>
         </table>
       </div>
+
       <div class="occupancy"><h4>occupancy: ${occ}</h4></div>
       <div class="floorNo"><h4>Floor : ${floor}</h4></div>
       <div class="price"><h4>Price: ${price} $</h4></div>
-      <div class="CommentContainer">
-        <form class="formComment" action="">
-          <p><label for="w3review">Comment:</label></p>
-          <textarea id="w3review" name="w3review" rows="4" cols="90"></textarea>
-          <br />
-          <input type="submit" value="Submit" />
-        </form>
-
+      <div class="booking">
+        <a href=""><h3>Booking</h3></a>
       </div>
-      <div class="showComment"></div>
+
+      <form class="formComment" action="CommentControl" method="post">
+        Comment: <input type="text" name="txtComment" />
+        <input style="width: 10%" type="submit" value="Send">
+      </form>
+      <div class="showComment">
+          <c:forEach items="${list}" var="c">
+              <div class="eachComment">
+              <div class="nameuser"><p>${c.getGuestFullName}</p></div>
+              <div class="vote" >${c.getStarRating} Star</div>
+              <div class="contentComment">${c.getRoomComment}</div>
+          </div> 
+          </c:forEach>
+      </div>
     </div>
+      
+      
+      
     <!-- 2.Detail Section End -->
 
     <!-- 3.Footer Section Begin -->
@@ -255,4 +261,3 @@
     ></script>
   </body>
 </html>
-

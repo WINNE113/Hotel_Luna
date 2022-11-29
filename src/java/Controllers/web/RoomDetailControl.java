@@ -5,7 +5,9 @@
  */
 package Controllers.web;
 
-import Entites.web.RoomDetail;
+
+import Entites.web.Comment;
+import Entites.web.RoomDetail1;
 import Dao.RoomDetailDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -37,14 +39,21 @@ public class RoomDetailControl extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         int roomNo = Integer.parseInt(request.getParameter("rid"));
         RoomDetailDao dao = new RoomDetailDao();
-        RoomDetail rd = dao.getRoomDetail(roomNo); 
+        RoomDetail1 rd = dao.getRoomDetail(roomNo); 
         request.setAttribute("floor", rd.getFloorNo());
         request.setAttribute("price", rd.getRoomPrice());
         request.setAttribute("occ", rd.getOccupancy());
         request.setAttribute("type", rd.getRoomTypeName());
         request.setAttribute("img", rd.getRoomImg());
-       
+        
+        List<Comment> list = dao.getComment(roomNo);
+        
+        request.setAttribute("list", list);
+        String cm = request.getParameter("txtComment");
+        int iduser= 2; //chua dang nhap duowc nen chau biet lay id o dau ae getParameter gium voi  
+        dao.pushCommentToDB(cm, iduser);        
         request.getRequestDispatcher("RoomDetail.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
