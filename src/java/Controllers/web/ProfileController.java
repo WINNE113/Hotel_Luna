@@ -1,8 +1,8 @@
 package Controllers.web;
 
-import Entites.web.Employee;
-import entity.Guest;
-import service.EmployeeService;
+import Entites.web.EmployeeEntity;
+import Entites.web.GuestEntity;
+import Service.web.impl.EmployeeService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
